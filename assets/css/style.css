@@ -58,6 +58,12 @@ footer {
         padding-bottom: 25px;
     }
 
+    .logo {
+
+        content:url("../../assets/images/Votery_logo_KO.png");
+
+    }
+
     .section-heading {
         font-size: 2em;
     }
