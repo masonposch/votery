@@ -12,19 +12,17 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }));
 
+// // override with POST having ?_method=DELETE
+// app.use(methodOverride('_method'));
+// var exphbs = require('express-handlebars');
+// app.engine('handlebars', exphbs({
+// 	defaultLayout: 'main'
+// }));
+// app.set('view engine', 'handlebars');
 
-/*
-// override with POST having ?_method=DELETE
-app.use(methodOverride('_method'));
-var exphbs = require('express-handlebars');
-app.engine('handlebars', exphbs({
-	defaultLayout: 'main'
-}));
-app.set('view engine', 'handlebars');
+// var routes = require('./controllers/*******INSERT A CONTROLLER FILE HERE***********');
+// app.use('/', routes);
 
-var routes = require('./controllers/*******INSERT A CONTROLLER FILE HERE***********');
-app.use('/', routes);
-
-var port = 3000;
-app.listen(port);
-console.log('App listening on PORT ' + port);
+// var port = 3000;
+// app.listen(port);
+// console.log('App listening on PORT ' + port);
