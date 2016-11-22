@@ -29,5 +29,11 @@ module.exports = function (sequelize, Datatypes){
 	})
 
 	return hr5711;
-	
+
 }
+
+
+
+
+
+
