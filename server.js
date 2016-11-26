@@ -30,6 +30,8 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 	//THIS IS WHERE WE WILL SET ALL THE DATA FOR OUR TABLES
 	//DO WE KNOW HOW TO ENTER CSVs DIRECTLY INTO SEQUELIZE?
 
+}).catch(function(error){
+	console.log(error);
 })
 
 
