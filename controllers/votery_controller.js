@@ -8,7 +8,7 @@ var s3110 = require('../models/s3110.js');
 
 
 router.get('/hr5711', function (req, res) {
-	burger.all(function (data) {
+	hr5711.all(function (data) {
 		var hbsObject = { hr5711: data };
 		console.log(hbsObject);
 		res.render('index', hbsObject);
@@ -17,7 +17,7 @@ router.get('/hr5711', function (req, res) {
 
 
 router.get('/hr5982', function (req, res) {
-	burger.all(function (data) {
+	hr5982.all(function (data) {
 		var hbsObject = { hr5982: data };
 		console.log(hbsObject);
 		res.render('index', hbsObject);
@@ -26,7 +26,7 @@ router.get('/hr5982', function (req, res) {
 
 
 router.get('/mhr5711', function (req, res) {
-	burger.all(function (data) {
+	mhr5711.all(function (data) {
 		var hbsObject = { mhr5711: data };
 		console.log(hbsObject);
 		res.render('index', hbsObject);
@@ -35,7 +35,7 @@ router.get('/mhr5711', function (req, res) {
 
 
 router.get('/mhr5982', function (req, res) {
-	burger.all(function (data) {
+	mhr5982.all(function (data) {
 		var hbsObject = { mhr5982: data };
 		console.log(hbsObject);
 		res.render('index', hbsObject);
@@ -44,7 +44,7 @@ router.get('/mhr5982', function (req, res) {
 
 
 router.get('/s3110', function (req, res) {
-	burger.all(function (data) {
+	s3110.all(function (data) {
 		var hbsObject = { s3110: data };
 		console.log(hbsObject);
 		res.render('index', hbsObject);
