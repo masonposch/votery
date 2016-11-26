@@ -5,12 +5,39 @@ var http = require('http');
 
 var app = express();
 
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(process.cwd() + '/public'));
+var models  = require('./models');
 
-app.use(bodyParser.urlencoded({
-	extended: false
-}));
+// extract our sequelize connection from the models object, to avoid confusion
+var sequelizeConnection = models.sequelize;
+
+// Serve static content for the app from the "public" directory in the application directory.
+// app.use(express.static(process.cwd() + '/public'));
+
+// app.use(bodyParser.urlencoded({
+// 	extended: false
+// }));
+
+
+sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
+
+.then(function(){
+	return sequelizeConnection.sync({force:true})
+})
+
+
+.then(function(){
+
+	//THIS IS WHERE WE WILL SET ALL THE DATA FOR OUR TABLES
+	//DO WE KNOW HOW TO ENTER CSVs DIRECTLY INTO SEQUELIZE?
+
+})
+
+
+
+
+
+
+
 
 // // override with POST having ?_method=DELETE
 // app.use(methodOverride('_method'));
