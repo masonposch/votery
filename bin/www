@@ -1,0 +1,13 @@
+// pull in app from server.js
+var app = require('../server');
+// pull in models from index.js
+var models = require("../models");
+// setting the port of the app
+app.set('port', process.env.PORT || 3000);
+// sync models with database and create the tables
+models.sequelize.sync().then(function () {
+	// set our app to listen to the port we set above
+  var server = app.listen(app.get('port'), function() {
+    console.log('Express server listening on port ' + server.address().port);
+  });
+});
