@@ -33,35 +33,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(path.join(__dirname, 'public')));
 
-var models  = require('./models');
-
-// extract our sequelize connection from the models object, to avoid confusion
-var sequelizeConnection = models.sequelize;
-
-// Serve static content for the app from the "public" directory in the application directory.
-// app.use(express.static(process.cwd() + '/public'));
-
-// app.use(bodyParser.urlencoded({
-// 	extended: false
-// }));
-
-
-sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
-
-.then(function(){
-	return sequelizeConnection.sync({force:true})
-})
-
-
-.then(function(){
-
-	//THIS IS WHERE WE WILL SET ALL THE DATA FOR OUR TABLES
-	//DO WE KNOW HOW TO ENTER CSVs DIRECTLY INTO SEQUELIZE?
-
-}).catch(function(error){
-	console.log(error);
-})
-
 // what to send based on route
 app.use('/', votery_controller);
 app.use('/x', need a controller); // set up just in case, not sure how many routes needed
@@ -77,3 +48,4 @@ app.use(function(req, res, next) {
 
 // export as app
 module.exports = app;
+
