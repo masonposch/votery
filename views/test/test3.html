@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Votery</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+
+<!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 50px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"> <img class= "logo" style= " max-width: 150px " src= "../../assets/images/votery_logo_Horizontal_KO.png"></a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Full Width Image Header with Logo -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+    <header class="image-bg-fluid-height">
+        <img class="img-responsive img-center" src="../../assets/images/sitting.jpeg" alt="">
+    </header>
+    <br>
+    <br>
+    <!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="section-heading">Welcome to Votery </h1>
+                    <br>
+                    <p class="lead section-lead">Politics has become an unavoidable part of day to day life. Now more than ever it is important to be informed on who is representing you in Washington. Votery is here to help you do just that. Input your location and Find your representative. </p>
+                    <p class="section-paragraph">Out of the list of and representatives  choose which Legislator’s voting record you are interested in seeing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form>
+                    <fieldset disabled>
+                         <div class="form-group">
+
+                            <label for="disabledSelect">State</label>
+                            <br>
+                            <select id="disabledSelect" class="form-control">
+                                 <option>Location</option>
+                            </select>
+                        </div>
+                            <div class="form-group">
+                                <label for="exampleSelect1">Zip Code</label>
+                                <select class="form-control" id="exampleSelect1">
+                                    <option>Location</option>
+                                </select>
+                            </div>
+                              
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember Me 
+                            </label>
+                        </div>
+                        <br>
+
+                         <button type="submit" class="btn btn-primary">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Fixed Height Image Aside -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+    <aside class="image-bg-fixed-height"></aside>
+<br>
+<br>
+<!-- Senate Content Section -->
+
+    <section>
+        <div class="container">
+            <h4 class="section-heading">Senate </h4>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Senators</th>
+                            <th>State</th>
+                            <th>Party</th>
+                            <th>Phone</th>
+                            <th>Website</th>
+                          </tr>
+                        </thead>
+                        <!--Where the Senators info will be pushed up-->
+                        <tbody>
+                         <!--Senators Sample Information-->
+                        <tr>
+                            <td>John Cornyn</td>
+                            <td>Texas</td>
+                            <td>Republican</td>
+                            <td>202-224-2934</td>
+                            <td>cornyn.senate.gov</td>
+                        </tr>
+                         <tr>
+                            <td>Ted Cruz</td>
+                            <td>Texas</td>
+                            <td>Republican</td>
+                            <td>202-224-5922</td>
+                            <td>cruz.senate.gov</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+<br>
+<br>
+<!-- House of Rep Content Section -->
+    <section>
+        <div class="container">
+            <h4 class="section-heading">House of Representatives</h4>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Representative</th>
+                            <th>State</th>
+                            <th>District</th>
+                            <th>Party</th>
+                            <th>Phone</th>
+                            <th>Website</th>
+                          </tr>
+                        </thead>
+
+                        <!--Where the Representative info will be pushed up-->
+                        <tbody>
+                        <!--Rep Sample Content-->
+                        <tr>
+                            <td>Michael T. McCaul</td>
+                            <td>Texas</td>
+                            <td>10</td>
+                            <td>Republican</td>
+                            <td>202-225-2401</td>
+                            <td href="http://mccaul.house.gov/">/mccaul.house.gov/</td>
+                        </tr> 
+                           
+                        <tr>
+                            <td>Bill Flores</td>
+                            <td>Texas</td>
+                            <td>17</td>
+                            <td>Republican</td>
+                            <td>202-225-6105</td>
+                            <td href="http://flores.house.gov">flores.house.gov</td>
+                        </tr> 
+
+                        <tr>
+                            <td>Lloyd Doggett</td>
+                            <td>Texas</td>
+                            <td>35</td>
+                            <td>Democrat</td>
+                            <td>202-225-4865</td>
+                            <td href="http://flores.house.gov">doggett.house.gov</td>
+                        </tr> 
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+<br>
+<br>
+<!-- Bills Content Section -->
+
+    <section>
+        <div class="container">
+            <h4 class="section-heading">Legislation</h4>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Bill title</th>
+                            <th>Bill number</th>
+                            <th>Sponsor</th>
+                            <th>Result</th>
+                            <th>Rep Vote</th>
+                            <th>Opinion</th>
+                          </tr>
+                        </thead>
+                        <!--Where the 10 most recent bills will be pushed up-->
+                        <tbody>
+                        <!--Bills Sample Content-->
+
+                            <!--content 1-->
+                            <tr>
+                                <td>Should the Senate Condemn North Korea’s Nuclear Weapons Tests?</td>
+                                <td>SB 564</td>
+                                <td>Benjamin Cardin</td>
+                                <td>Pending</td>
+                                <td>TBD</td>
+                                <td>TBD</td>
+                            <tr>
+
+                            <!--content 2-->
+                            <tr>
+                                <td>NAFTA Accountability Act</td>
+                                <td>HB 6056</td>
+                                <td>Rep. Marcy Kaptur</td>
+                                <td>Pending</td>
+                                <td>TBD</td>
+                                <td>TBD</td>
+                            </tr>
+
+                            <!--content 3-->
+                            <tr>
+                                <td>Restricting First Use of Nuclear Weapons Act of 2016</td>
+                                <td>HB 6179</td>
+                                <td>Ted Lieu</td>
+                                <td>Pending</td>
+                                <td>TBD</td>
+                                <td>TBD</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+<br>
+<br>
+<br>
+<br>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Votery 2016</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
