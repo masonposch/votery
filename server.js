@@ -2,22 +2,52 @@ var express = require('express');
 var path = require('path');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
+var models  = require('./models');
+
 
 
 //model controllers
-var application_controller = require('./controllers/application_controller'); // set up just in case, not sure how many needed
+var application_controller = require('./controllers/application_controller.js'); // set up just in case, not sure how many needed
 // var hr5711_controller = require('./controllers/hr5711_controller'); // set up just in case, not sure how many needed
 // var hr5982_controller = require('./controllers/hr5982_controller'); // set up just in case, not sure how many needed
 // var mhr5711_controller = require('./controllers/mhr5711_controller'); // set up just in case, not sure how many needed
 // var mhr5982_controller = require('./controllers/mhr5982_controller'); // set up just in case, not sure how many needed
 // var s3110_controller = require('./controllers/s3110_controller'); // set up just in case, not sure how many needed
 
+// instantiate app
+var app = express();
+
+
+// extract our sequelize connection from the models object, to avoid confusion
+var sequelizeConnection = models.sequelize;
+
+
+// PREPARE OUR TABLES 
+// =======================================================================
+
+
+// We run this query so that we can drop our tables even though they have foreign keys
+sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
+
+
+.then(function(){
+
+
+	//POPULATE TABLES WITH DATA FROM CSVs HERE
+
+
+})
+
+
+.then(function(){
+	return sequelizeConnection.sync({force:true})
+})
+
+
+
 
 // Express settings
 // ================
-
-// instantiate app
-var app = express();
 
 // override POST to have DELETE and PUT
 app.use(methodOverride('_method'));
@@ -52,6 +82,12 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
+// listen on port 3000
+app.listen(3000, function(){
+	console.log("Listening on port 3000")
+})
 
 // export as app
 module.exports = app;
