@@ -35,9 +35,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // what to send based on route
 app.use('/', votery_controller);
-app.use('/x', need a controller); // set up just in case, not sure how many routes needed
-app.use('/y', need a controller); // set up just in case, not sure how many routes needed
-app.use('/z', need a controller); // set up just in case, not sure how many routes needed
+// app.use('/x', need a controller); // set up just in case, not sure how many routes needed
+// app.use('/y', need a controller); // set up just in case, not sure how many routes needed
+// app.use('/z', need a controller); // set up just in case, not sure how many routes needed
 
 // in case of 404 catch by handler
 app.use(function(req, res, next) {
