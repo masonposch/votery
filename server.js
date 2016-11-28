@@ -6,11 +6,11 @@ var bodyParser = require('body-parser');
 
 //model controllers
 var application_controller = require('./controllers/application_controller'); // set up just in case, not sure how many needed
-var hr5711_controller = require('./controllers/hr5711_controller'); // set up just in case, not sure how many needed
-var hr5982_controller = require('./controllers/hr5982_controller'); // set up just in case, not sure how many needed
-var mhr5711_controller = require('./controllers/mhr5711_controller'); // set up just in case, not sure how many needed
-var mhr5982_controller = require('./controllers/mhr5982_controller'); // set up just in case, not sure how many needed
-var s3110_controller = require('./controllers/s3110_controller'); // set up just in case, not sure how many needed
+// var hr5711_controller = require('./controllers/hr5711_controller'); // set up just in case, not sure how many needed
+// var hr5982_controller = require('./controllers/hr5982_controller'); // set up just in case, not sure how many needed
+// var mhr5711_controller = require('./controllers/mhr5711_controller'); // set up just in case, not sure how many needed
+// var mhr5982_controller = require('./controllers/mhr5982_controller'); // set up just in case, not sure how many needed
+// var s3110_controller = require('./controllers/s3110_controller'); // set up just in case, not sure how many needed
 
 
 // Express settings
