@@ -3,6 +3,10 @@ var path = require('path');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var models  = require('./models');
+var tables = require('tables');
+
+
+
 
 
 
@@ -33,7 +37,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 .then(function(){
 
 
-	//POPULATE TABLES WITH DATA FROM CSVs HERE
+	//INSERT DATA FROM CSV INTO MODELS HERE
 
 
 })
