@@ -4,6 +4,9 @@ var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var models  = require('./models');
 var tables = require('tables');
+var test = require('./test/csv_package_test.js');
+var csv = require('csv');
+var fs = require('fs');
 
 
 
@@ -35,17 +38,55 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 
 .then(function(){
+	return sequelizeConnection.sync({force:true})
+})
+
+.then(function(){
 
 
-	//INSERT DATA FROM CSV INTO MODELS HERE
+	fs.readFile('./assets/csv/hr-5711.csv', function(err, res) {
+
+	  if (err) throw err;
+
+	  csv.parse(res, function(err, res) {
+
+	    if (err) throw err;
+
+	    for(var i = 0; i < 5; i++){
+
+	    	models.hr5711.create({
+
+	    		state: res[i][1],
+	    		district: res[i][2],
+	    		vote: res[i][3],
+	    		name: res[i][4],
+	    		party: res[i][5] 
+
+	    	})
+
+	    }
+
+	  })
+
+	});
 
 
 })
 
 
 .then(function(){
-	return sequelizeConnection.sync({force:true})
+
+
+	models.hr5711.findAll({
+
+	}).then(function(records){
+		console.log(records);
+	})
+
+
 })
+
+
 
 
 
