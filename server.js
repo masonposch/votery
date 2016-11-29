@@ -52,9 +52,113 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 	    if (err) throw err;
 
-	    for(var i = 0; i < 5; i++){
+	    for(var i = 0; i < res.length; i++){
 
 	    	models.hr5711.create({
+
+	    		state: res[i][1],
+	    		district: res[i][2],
+	    		vote: res[i][3],
+	    		name: res[i][4],
+	    		party: res[i][5] 
+
+	    	})
+
+	    }
+
+	  })
+
+	});
+
+	fs.readFile('./assets/csv/hr-5982.csv', function(err, res) {
+
+	  if (err) throw err;
+
+	  csv.parse(res, function(err, res) {
+
+	    if (err) throw err;
+
+	    for(var i = 0; i < res.length; i++){
+
+	    	models.hr5982.create({
+
+	    		state: res[i][1],
+	    		district: res[i][2],
+	    		vote: res[i][3],
+	    		name: res[i][4],
+	    		party: res[i][5] 
+
+	    	})
+
+	    }
+
+	  })
+
+	});
+
+	fs.readFile('./assets/csv/motion-to-hr-5711.csv', function(err, res) {
+
+	  if (err) throw err;
+
+	  csv.parse(res, function(err, res) {
+
+	    if (err) throw err;
+
+	    for(var i = 0; i < res.length; i++){
+
+	    	models.mhr5711.create({
+
+	    		state: res[i][1],
+	    		district: res[i][2],
+	    		vote: res[i][3],
+	    		name: res[i][4],
+	    		party: res[i][5] 
+
+	    	})
+
+	    }
+
+	  })
+
+	});
+
+	fs.readFile('./assets/csv/motion-to-hr-5982.csv', function(err, res) {
+
+	  if (err) throw err;
+
+	  csv.parse(res, function(err, res) {
+
+	    if (err) throw err;
+
+	    for(var i = 0; i < res.length; i++){
+
+	    	models.mhr5982.create({
+
+	    		state: res[i][1],
+	    		district: res[i][2],
+	    		vote: res[i][3],
+	    		name: res[i][4],
+	    		party: res[i][5] 
+
+	    	})
+
+	    }
+
+	  })
+
+	});
+
+	fs.readFile('./assets/csv/s-3110.csv', function(err, res) {
+
+	  if (err) throw err;
+
+	  csv.parse(res, function(err, res) {
+
+	    if (err) throw err;
+
+	    for(var i = 0; i < res.length; i++){
+
+	    	models.s3110.create({
 
 	    		state: res[i][1],
 	    		district: res[i][2],
@@ -78,6 +182,34 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 
 	models.hr5711.findAll({
+
+	}).then(function(records){
+		console.log(records);
+	})
+
+
+	models.hr5982.findAll({
+
+	}).then(function(records){
+		console.log(records);
+	})
+
+
+	models.mhr5711.findAll({
+
+	}).then(function(records){
+		console.log(records);
+	})
+
+
+	models.mhr5982.findAll({
+
+	}).then(function(records){
+		console.log(records);
+	})
+	
+
+	models.s3110.findAll({
 
 	}).then(function(records){
 		console.log(records);
