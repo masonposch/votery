@@ -3,7 +3,6 @@ var path = require('path');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var models  = require('./models');
-var tables = require('tables');
 var test = require('./test/csv_package_test.js');
 var csv = require('csv');
 var fs = require('fs');
