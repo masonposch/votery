@@ -29,6 +29,9 @@ var app = express();
 var sequelizeConnection = models.sequelize;
 
 
+
+
+
 // PREPARE OUR TABLES 
 // =======================================================================
 
@@ -178,6 +181,11 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 })
 
 
+
+
+//Push the parsed data into its respective table in the database
+// =======================================================================
+
 .then(function(){
 
 
@@ -207,7 +215,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 	}).then(function(records){
 		console.log(records);
 	})
-	
+
 
 	models.s3110.findAll({
 
