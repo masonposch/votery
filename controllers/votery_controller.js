@@ -7,19 +7,21 @@ var models = require('../models');
 router.get('/', function(req, res) {
 
 
-  // models.hr5711.findAll({
-  // 	where: {
-  // 		state: 'TX'
-  // 	}
-  // })
+  models.hr5711.findAll({
+  	where: {
+  		state: 'TX'
+  	}
+  })
 
-  // .then(function(reps) {
+  .then(function(reps) {
 
-  //   res.render(reps);
+    res.render('votery/index', {
+    	reps: reps
+    });
 
-  // })
+  })
 
-  res.send("hello world");
+  // res.send("hello world");
 
 });
 
