@@ -5,32 +5,6 @@ var models = require('../models');
 
 
 
-//Set router for homepage
-router.get('/', function(req, res) {
-
-
-  models.hr5711.findAll({
-  	where: {
-  		state: 'TX'
-  	}
-  })
-
-  .then(function(reps) {
-
-    res.render('votery/index', {
-    	reps: reps
-    });
-
-  })
-
-  // res.send("hello world");
-
-});
-
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-
 //Set router for the value of the state that is chosen
 router.get('/texas', function(req, res) {
   
@@ -47,10 +21,10 @@ router.get('/texas', function(req, res) {
 
   })
 
-  .then(function(test) {
+  .then(function(reps) {
 
     res.render('userChoice/state', {
-      test: test
+      reps: reps
     });
 
   })
@@ -58,11 +32,5 @@ router.get('/texas', function(req, res) {
 })
 
 
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////  
 
 module.exports = router;
