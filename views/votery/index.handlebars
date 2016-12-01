@@ -1,0 +1,163 @@
+        <!-- Full Width Image Header with Logo -->
+        <!-- Image backgrounds are set within the full-width-pics.css file. -->
+        <header class="image-bg-fluid-height">
+            <img class="img-responsive img-center" src="../../assets/images/sitting.jpeg" alt="">
+        </header>
+
+        <!-- Content Section -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="section-heading">Welcome to Votery </h1>
+                        <p class="lead section-lead">Politics has become an unavoidable part of day to day life. Now more than ever it is important to be informed on who is representing you in Washington. Votery is here to help you do just that. Input your location and Find your representative. </p>
+                        <p class="section-paragraph">Out of the list of senators choose which Legislator’s voting record you are interested in seeing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+    			    <form>
+    			  		<div class="form-group">
+                            
+                                <label for="usr">Enter your State</label>
+                                    <select class="form-control" id="question1">
+                                        <option value="">N/A</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DC">District of Columbia</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NY">New York</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="PR">Puerto Rico</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                        
+    				    <div class="checkbox">
+    				      <label>
+    				        <input type="checkbox"> Remember Me 
+    				      </label>
+    				    </div>
+    				    <button type="submit" class="btn btn-primary">Submit</button>
+    			  		</fieldset>
+    				</form>
+    			</div>
+    		</div>
+    	</div>
+        
+
+        <!-- Content Section -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Representative</th>
+                                <th>State</th>
+                                <th>District</th>
+                                <th>Party</th>
+                                <th>Vote</th>
+                              </tr>
+                            </thead>
+                            <!--Where the results will be pushed up-->
+                            <tbody>
+                            {{#each reps}}
+                              <tr>
+                                <td>
+                                    {{this.name}}
+                                </td>
+                                <td>
+                                    {{this.state}}
+                                </td>
+                                <td>
+                                    {{this.district}}
+                                </td>
+                                <td>
+                                    {{this.party}}
+                                </td>
+                                <td>
+                                    {{this.vote}}
+                                </td>                                             
+                              </tr>
+                              {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Bill</th>
+                                <th>Sponsor</th>
+                                <th>Introduced</th>
+                                <th>Result</th>
+                                <th>Vote</th>
+                                <th>Opinion</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div> -->
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </section>

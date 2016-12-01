@@ -1,55 +1,61 @@
 var express = require('express');
-var router = express.Router();
-var hr5711 = require('../models/hr5711.js');
-var hr5982 = require('../models/hr5982.js');
-var mhr5711 = require('../models/mhr5711.js');
-var mhr5982 = require('../models/mhr5982.js');
-var s3110 = require('../models/s3110.js');
+var router  = express.Router();
+var models = require('../models');
 
 
-router.get('/hr5711', function (req, res) {
-	hr5711.all(function (data) {
-		var hbsObject = { hr5711: data };
-		console.log(hbsObject);
-		res.render('index', hbsObject);
-	});
+
+
+//Set router for homepage
+router.get('/', function(req, res) {
+
+
+  models.hr5711.findAll({
+  	where: {
+  		state: 'TX'
+  	}
+  })
+
+  .then(function(reps) {
+
+    res.render('votery/index', {
+    	reps: reps
+    });
+
+  })
+
+  // res.send("hello world");
+
 });
 
 
-router.get('/hr5982', function (req, res) {
-	hr5982.all(function (data) {
-		var hbsObject = { hr5982: data };
-		console.log(hbsObject);
-		res.render('index', hbsObject);
-	});
-});
+//////////////////////////////////////////////////////////////////////////////////////////
 
 
-router.get('/mhr5711', function (req, res) {
-	mhr5711.all(function (data) {
-		var hbsObject = { mhr5711: data };
-		console.log(hbsObject);
-		res.render('index', hbsObject);
-	});
-});
+//Set router for the value of the state that is chosen
+router.get('/texas', function(req, res) {
+  
 
+  //This needs to be changed to search through all models, or the new model that still needs to be created
+  models.hr5711.findAll({
 
-router.get('/mhr5982', function (req, res) {
-	mhr5982.all(function (data) {
-		var hbsObject = { mhr5982: data };
-		console.log(hbsObject);
-		res.render('index', hbsObject);
-	});
-});
+    where: {
 
+      //This needs to be changed to take in the user value
+      state: 'TX'
 
-router.get('/s3110', function (req, res) {
-	s3110.all(function (data) {
-		var hbsObject = { s3110: data };
-		console.log(hbsObject);
-		res.render('index', hbsObject);
-	});
-});
+    }
+
+  })
+
+  .then(function(test) {
+
+    res.render('userChoice/state', {
+      test: test
+    });
+
+  })
+  
+})
 
 
 
@@ -57,3 +63,6 @@ router.get('/s3110', function (req, res) {
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////  
+
+module.exports = router;
