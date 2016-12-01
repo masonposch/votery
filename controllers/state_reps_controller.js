@@ -5,31 +5,27 @@ var models = require('../models');
 
 
 
-//Set router for the value of the state that is chosen
+//Set router for homepage
 router.get('/texas', function(req, res) {
-  
 
-  //This needs to be changed to search through all models, or the new model that still needs to be created
-  models.hr5711.findAll({
 
+  models.hr5982.findAll({
     where: {
-
-      //This needs to be changed to take in the user value
       state: 'TX'
-
     }
-
   })
 
-  .then(function(reps) {
+  .then(function(test) {
 
     res.render('userChoice/state', {
-      reps: reps
+      test: test
     });
 
   })
-  
-})
+
+  // res.send("hello world");
+
+});
 
 
 
