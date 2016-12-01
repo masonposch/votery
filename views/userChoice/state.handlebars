@@ -1,0 +1,83 @@
+ <!-- Full Width Image Header with Logo -->
+        <!-- Image backgrounds are set within the full-width-pics.css file. -->
+        <header class="image-bg-fluid-height">
+            <img class="img-responsive img-center" src="../../assets/images/sitting.jpeg" alt="">
+        </header>
+
+        <!-- Content Section -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="section-heading">Your State Representatives</h1>
+                        <p class="lead section-lead">Select a Representative to see their voting history. </p>
+                        <p class="section-paragraph">Listing all your state reps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Fixed Height Image Aside -->
+        <!-- Image backgrounds are set within the full-width-pics.css file. -->
+        <aside class="image-bg-fixed-height"></aside>
+
+        <!-- Content Section -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Representative</th>
+                                <th>District</th>
+                                <th>Party</th>  
+                              </tr>
+                            </thead>
+                            <!--Where the results will be pushed up-->
+                            <tbody>
+                            {{#each reps}}
+                              <tr>
+                                <td>
+                                    {{this.name}}
+                                </td>
+                                <td>
+                                    {{this.district}}
+                                </td>
+                                <td>
+                                    {{this.party}}
+                                </td>                                          
+                              </tr>
+                              {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Bill</th>
+                                <th>Sponsor</th>
+                                <th>Introduced</th>
+                                <th>Result</th>
+                                <th>Vote</th>
+                                <th>Opinion</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div> -->
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </section>
