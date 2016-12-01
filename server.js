@@ -33,7 +33,7 @@ var sequelizeConnection = models.sequelize;
 
 
 
-// PREPARE OUR TABLES 
+// PREPARE OUR TABLES
 // =======================================================================
 
 
@@ -41,9 +41,9 @@ var sequelizeConnection = models.sequelize;
 sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 
-// .then(function(){
-// 	return sequelizeConnection.sync({force:true})
-// })
+.then(function(){
+	return sequelizeConnection.sync({force:true})
+})
 
 // .then(function(){
 
@@ -64,7 +64,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
 // 	    		name: res[i][4],
-// 	    		party: res[i][5] 
+// 	    		party: res[i][5]
 
 // 	    	})
 
@@ -90,7 +90,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
 // 	    		name: res[i][4],
-// 	    		party: res[i][5] 
+// 	    		party: res[i][5]
 
 // 	    	})
 
@@ -116,7 +116,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
 // 	    		name: res[i][4],
-// 	    		party: res[i][5] 
+// 	    		party: res[i][5]
 
 // 	    	})
 
@@ -142,7 +142,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
 // 	    		name: res[i][4],
-// 	    		party: res[i][5] 
+// 	    		party: res[i][5]
 
 // 	    	})
 
@@ -168,7 +168,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
 // 	    		name: res[i][4],
-// 	    		party: res[i][5] 
+// 	    		party: res[i][5]
 
 // 	    	})
 
@@ -180,6 +180,30 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 
 // })
+
+fs.readFile('./assets/json/legislators-current.json', function(err, res) {
+
+ 	  if (err) throw err;
+
+    var data = JSON.parse(res);
+
+ 	  for (i = 0; i < 541; i++){
+
+ 	    models.congress_members.create({
+
+ 	    	fullName: data[i].name.official_full,
+ 	    	party: data[i].terms[data[i].terms.length - 1].party,
+ 	    	state: data[i].terms[data[i].terms.length - 1].state,
+ 	  		chamber: data[i].terms[data[i].terms.length - 1].type,
+ 	  		officeAddress: data[i].terms[data[i].terms.length - 1].office,
+        phoneNumber: data[i].terms[data[i].terms.length - 1].phone,
+        url: data[i].terms[data[i].terms.length - 1].url
+
+ 	    })
+
+ 	  }
+
+ });
 
 
 
