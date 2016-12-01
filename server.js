@@ -15,7 +15,7 @@ var voter
 
 //model controllers
 var application_controller = require('./controllers/application_controller.js'); // set up just in case, not sure how many needed
-var votery_controller = require('./controllers/votery_controller.js')
+var votery_controller = require('./controllers/votery_controller.js');
 // var hr5711_controller = require('./controllers/hr5711_controller'); // set up just in case, not sure how many needed
 // var hr5982_controller = require('./controllers/hr5982_controller'); // set up just in case, not sure how many needed
 // var mhr5711_controller = require('./controllers/mhr5711_controller'); // set up just in case, not sure how many needed
@@ -259,6 +259,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // what to send based on route
 app.use('/', application_controller);
 app.use('/votery', votery_controller);
+
+//This needs to be set up to take in the user value, if possible
+app.use('/texas', votery_controller);
 // app.use('/x', need a controller); // set up just in case, not sure how many routes needed
 // app.use('/y', need a controller); // set up just in case, not sure how many routes needed
 // app.use('/z', need a controller); // set up just in case, not sure how many routes needed
