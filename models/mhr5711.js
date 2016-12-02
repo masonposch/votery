@@ -3,9 +3,8 @@ module.exports = function (sequelize, Datatypes){
 	var mhr5711 = sequelize.define('mhr5711', {
 		
 		id: {
-			type: Datatypes.INTEGER,
-			primaryKey: true,
-			autoIncrement: true
+			type: Datatypes.STRING,
+			primaryKey: true
 		},
 
 		state: {
