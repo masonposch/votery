@@ -9,25 +9,38 @@ var models = require('../models');
 router.get('/', function(req, res) {
 
 
-  models.hr5711.findAll({
-  	where: {
-  		state: 'TX'
-  	}
-  })
+  // models.hr5711.findAll({
+  // 	where: {
+  // 		state: 'TX'
+  // 	}
+  // })
 
-  .then(function(reps) {
+  // .then(function(reps) {
 
     res.render('votery/index', {
-    	reps: reps
+    	// reps: reps
     });
 
-  })
+  // })
 
   // res.send("hello world");
 
 });
 
-
+router.post('/state', function (req, res) {
+  
+  models.hr5711.findAll({
+  	where: {
+  		state: req.body.state
+  	}
+  })
+  // connect the .create to this .then
+  .then(function(reps) {
+    res.render('votery/index', {
+    	reps: reps
+    });
+   });
+});
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
