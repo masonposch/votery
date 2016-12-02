@@ -21,11 +21,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-    			    <form>
+    			    <form action="/votery/state" method="post">
     			  		<div class="form-group">
                             
                                 <label for="usr">Enter your State</label>
-                                    <select class="form-control" id="question1">
+                                    <select name="state" class="form-control" id="question1">
                                         <option value="">N/A</option>
                                         <option value="AK">Alaska</option>
                                         <option value="AL">Alabama</option>
@@ -88,7 +88,6 @@
     				      </label>
     				    </div>
     				    <button type="submit" class="btn btn-primary">Submit</button>
-    			  		</fieldset>
     				</form>
     			</div>
     		</div>
