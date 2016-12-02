@@ -112,9 +112,9 @@
                             <!--Where the results will be pushed up-->
                             <tbody>
                             {{#each reps}}
-                              <tr onclick="window.document.location='/votery';">
+                              <tr>
                                 <td>
-                                    {{this.fullName}}
+                                    <a href="#" val="{{this.fullName}}">{{this.fullName}}</a>
                                 </td>
                                 <td>
                                     {{this.state}}
@@ -126,7 +126,7 @@
                                     {{this.phoneNumber}}
                                 </td>      
                                 <td>
-                                    {{this.url}}
+                                    <a href="{{this.url}}">{{this.url}}</a>
                                 </td>                                                                  
                               </tr>
                               {{/each}}
