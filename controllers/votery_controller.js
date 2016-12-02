@@ -29,7 +29,7 @@ router.get('/', function(req, res) {
 
 router.post('/state', function (req, res) {
   
-  models.hr5711.findAll({
+  models.congress_members.findAll({
   	where: {
   		state: req.body.state
   	}
