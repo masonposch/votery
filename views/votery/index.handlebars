@@ -87,7 +87,7 @@
     			</div>
     		</div>
     	</div>
-        
+        <br>
 
         <!-- Content Section -->
         <section>
@@ -109,7 +109,7 @@
                                 {{#each reps}}
                                     <tr>
                                         <td>
-                                            <form action="/votery/representative_profile" method="post" name="id" value="{{this.id}}"><button type="submit">{{this.fullName}}</button></form>
+                                            <form action="/votery/representative_profile/{{this.id}}" method="post"><button type="submit">{{this.fullName}}</button></form>
                                         </td>
                                         <td>
                                             {{this.state}}
