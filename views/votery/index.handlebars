@@ -104,9 +104,9 @@
                               <tr>
                                 <th>Representative</th>
                                 <th>State</th>
-                                <th>District</th>
                                 <th>Party</th>
-                                <th>Vote</th>
+                                <th>Phone Number</th>
+                                <th>Website</th>
                               </tr>
                             </thead>
                             <!--Where the results will be pushed up-->
@@ -114,20 +114,20 @@
                             {{#each reps}}
                               <tr>
                                 <td>
-                                    {{this.name}}
+                                    {{this.fullName}}
                                 </td>
                                 <td>
                                     {{this.state}}
                                 </td>
                                 <td>
-                                    {{this.district}}
-                                </td>
-                                <td>
                                     {{this.party}}
                                 </td>
                                 <td>
-                                    {{this.vote}}
-                                </td>                                             
+                                    {{this.phoneNumber}}
+                                </td>      
+                                <td>
+                                    {{this.url}}
+                                </td>                                                                           
                               </tr>
                               {{/each}}
                             </tbody>
