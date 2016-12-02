@@ -42,6 +42,23 @@ router.post('/state', function (req, res) {
    });
 });
 
+router.post('/representative_profile', function (req, res) {
+  
+  models.congress_members.findAll({
+    where: {
+      id: req.body.id
+    }
+  })
+  // connect the .create to this .then
+  .then(function(reps) {
+    res.render('userChoice/state', {
+      reps: reps
+    });
+   });
+});
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 

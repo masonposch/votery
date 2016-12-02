@@ -114,7 +114,7 @@
                             {{#each reps}}
                               <tr>
                                 <td>
-                                    <a href="#" val="{{this.id}}">{{this.fullName}}</a>
+                                    <form action="/votery/representative_profile" method="post" name="id" value="{{this.id}}"><button type="submit">{{this.fullName}}</button></form>
                                 </td>
                                 <td>
                                     {{this.state}}
