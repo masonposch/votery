@@ -26,7 +26,14 @@ module.exports = function (sequelize, Datatypes){
 		party: {
 			type: Datatypes.STRING,
 		},
-	})
+	
+	}, {
+      classMethods: {
+        associate: function(models) {
+          hr5982.belongsTo(models.hr5711, {foreignKey: 'id'})
+        }
+      }
+  	})
 
 	return hr5982;
 	

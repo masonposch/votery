@@ -32,6 +32,12 @@ router.post('/state', function (req, res) {
 
 router.post('/representative_profile/:id', function (req, res) {
   models.hr5711.findAll({
+    include: [{
+      model: models.hr5982,
+      where: {
+        id: req.params.id
+      }
+    }],
     where: {
       id: req.params.id
     }
@@ -43,6 +49,34 @@ router.post('/representative_profile/:id', function (req, res) {
     });
    });
 });
+
+// router.post('/representative_profile/:id', function (req, res) {
+//   models.hr5711.findOne({
+//     // include: [{
+//     //   model: models.hr5982,
+//     //   where: {
+//     //     id: req.params.id
+//     //   }
+//     // }],
+//     where: {
+//       id: 400004
+//     }
+//   })
+//   // connect the .create to this .then
+//   .then(function(reps) {
+
+//     reps.gethr5982s()
+
+//     .then(function(data) {
+
+//       res.json(data)
+
+//     })
+//     // res.render('userChoice/state', {
+//     //   reps: reps
+//     // });
+//   });
+// });
 
 
 module.exports = router;
