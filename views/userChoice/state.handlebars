@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <table class="table table-hover">
+                        <table id="voteTable" class="table table-hover">
                             <thead>
                               <tr>
                                 <th>Bill</th>
@@ -41,7 +41,6 @@
                             </thead>
                             <!--Where the results will be pushed up-->
                             <tbody>
-                            {{#each reps}}
                               <tr>
                                 <td>
                                     hr-5711
@@ -53,7 +52,7 @@
                                     To prohibit the Secretary of the Treasury from authorizing certain transactions by a U.S. financial institution in connection with the export or re-export of a commercial passenger aircraft to the Islamic Republic of Iran.
                                 </td>
                                 <td>
-                                   {{this.vote}}
+                                   {{hr5711.vote}}
                                 </td>                                                                 
                               </tr>
 
@@ -68,7 +67,7 @@
                                     To amend chapter 8 of title 5, United States Code, to provide for en bloc consideration in resolutions of disapproval for "midnight rules", and for other purposes.
                                 </td>
                                 <td>
-                                   {{this.vote}}
+                                   {{hr5982.vote}}
                                 </td>                                                                 
                               </tr>
 
@@ -83,7 +82,7 @@
                                     Motion to vote on hr-5711
                                 </td>
                                 <td>
-                                   {{this.vote}}
+                                   {{mhr5711.vote}}
                                 </td>                                                                 
                               </tr>
 
@@ -98,7 +97,7 @@
                                     Motion to vote on hr-5982
                                 </td>
                                 <td>
-                                   {{this.vote}}
+                                   {{mhr5982.vote}}
                                 </td>                                                                 
                               </tr>
 
@@ -113,11 +112,9 @@
                                     A bill to provide for reforms of the administration of the outer Continental Shelf of the United States, to provide for the development of geothermal, solar, and wind energy on public land, and for other purposes.
                                 </td>
                                 <td>
-                                   {{this.vote}}
+                                    {{s3110.vote}}
                                 </td>                                                                 
                               </tr>
-
-                              {{/each}}
                             </tbody>
                         </table>
                     </div>
