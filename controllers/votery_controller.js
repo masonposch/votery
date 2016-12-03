@@ -8,74 +8,78 @@ var models = require('../models');
 //Set router for homepage
 router.get('/', function(req, res) {
 
-
-  // models.hr5711.findAll({
-  // 	where: {
-  // 		state: 'TX'
-  // 	}
-  // })
-
-  // .then(function(reps) {
-
     res.render('votery/index', {
-    	// reps: reps
+
     });
-
-  // })
-
-  // res.send("hello world");
 
 });
 
 router.post('/state', function (req, res) {
-  
-  models.hr5711.findAll({
+
+  models.congress_members.findAll({
   	where: {
   		state: req.body.state
   	}
   })
+
   // connect the .create to this .then
   .then(function(reps) {
-    res.render('votery/index', {
-    	reps: reps
+		res.render('votery/index', {
+			reps: reps
+		});
+   });
+});
+
+router.post('/representative_profile/:id', function (req, res) {
+  models.hr5711.findAll({
+    include: [{
+      model: models.hr5982,
+      where: {
+        id: req.params.id
+      }
+    }],
+    where: {
+      id: req.params.id
+    }
+  })
+  // connect the .create to this .then
+  .then(function(reps) {
+    res.render('userChoice/state', {
+      reps: reps
     });
    });
 });
-//////////////////////////////////////////////////////////////////////////////////////////
 
+// router.post('/representative_profile/:id', function (req, res) {
+//   models.hr5711.findOne({
+//     // include: [{
+//     //   model: models.hr5982,
+//     //   where: {
+//     //     id: req.params.id
+//     //   }
+//     // }],
+//     where: {
+//       id: 400004
+//     }
+//   })
+//   // connect the .create to this .then
+//   .then(function(reps) {
 
-//Set router for the value of the state that is chosen
-router.get('/texas', function(req, res) {
-  
+//     reps.gethr5982s()
 
-  //This needs to be changed to search through all models, or the new model that still needs to be created
-  models.hr5711.findAll({
+//     .then(function(data) {
 
-    where: {
+//       res.json(data)
 
-      //This needs to be changed to take in the user value
-      state: 'TX'
+//     })
+//     // res.render('userChoice/state', {
+//     //   reps: reps
+//     // });
+//   });
+// });
 
-    }
-
-  })
-
-  .then(function(test) {
-
-    res.render('userChoice/state', {
-      test: test
-    });
-
-  })
-  
-})
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////  
 
 module.exports = router;
+
+
+

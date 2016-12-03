@@ -1,9 +1,8 @@
 module.exports = function (sequelize, Datatypes){
 	var hr5711 = sequelize.define('hr5711', {
 		id: {
-			type: Datatypes.INTEGER,
-			primaryKey: true,
-			autoIncrement: true
+			type: Datatypes.STRING,
+			primaryKey: true
 		},
 		state: {
 			type: Datatypes.STRING,
@@ -19,8 +18,14 @@ module.exports = function (sequelize, Datatypes){
 		},
 		party: {
 			type: Datatypes.STRING,
-		},
-	});
+		}
+	},{
+      classMethods: {
+        associate: function(models) {
+          hr5711.hasMany(models.hr5982, {foreignKey: 'id'})
+        }
+      }
+  	});
 	
 	return hr5711;
 }

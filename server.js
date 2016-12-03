@@ -16,8 +16,8 @@ var voter
 //model controllers
 var application_controller = require('./controllers/application_controller.js'); // set up just in case, not sure how many needed
 var votery_controller = require('./controllers/votery_controller.js');
-var state_reps_controller = require('./controllers/state_reps_controller.js');
-var rep_profile_controller = require('./controllers/rep_profile_controller.js');
+// var state_reps_controller = require('./controllers/state_reps_controller.js');
+// var rep_profile_controller = require('./controllers/rep_profile_controller.js');
 // var hr5711_controller = require('./controllers/hr5711_controller'); // set up just in case, not sure how many needed
 // var hr5982_controller = require('./controllers/hr5982_controller'); // set up just in case, not sure how many needed
 // var mhr5711_controller = require('./controllers/mhr5711_controller'); // set up just in case, not sure how many needed
@@ -62,6 +62,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 // 	    	models.hr5711.create({
 
+// 	    		id: res[i][0],
 // 	    		state: res[i][1],
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
@@ -88,6 +89,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 // 	    	models.hr5982.create({
 
+// 	    		id: res[i][0],
 // 	    		state: res[i][1],
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
@@ -114,6 +116,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 // 	    	models.mhr5711.create({
 
+// 	    		id: res[i][0],
 // 	    		state: res[i][1],
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
@@ -140,6 +143,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 // 	    	models.mhr5982.create({
 
+// 	    		id: res[i][0],
 // 	    		state: res[i][1],
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
@@ -166,6 +170,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 // 	    	models.s3110.create({
 
+// 	    		id: res[i][0],
 // 	    		state: res[i][1],
 // 	    		district: res[i][2],
 // 	    		vote: res[i][3],
@@ -190,13 +195,14 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 
 //  	    models.congress_members.create({
 
+//  	    	id: data[i].id.govtrack,
 //  	    	fullName: data[i].name.official_full,
 //  	    	party: data[i].terms[data[i].terms.length - 1].party,
 //  	    	state: data[i].terms[data[i].terms.length - 1].state,
 //  	  		chamber: data[i].terms[data[i].terms.length - 1].type,
 //  	  		officeAddress: data[i].terms[data[i].terms.length - 1].office,
-//         phoneNumber: data[i].terms[data[i].terms.length - 1].phone,
-//         url: data[i].terms[data[i].terms.length - 1].url
+//         	phoneNumber: data[i].terms[data[i].terms.length - 1].phone,
+//         	url: data[i].terms[data[i].terms.length - 1].url
 
 //  	    })
 
@@ -287,7 +293,7 @@ app.use('/', application_controller);
 app.use('/votery', votery_controller);
 
 //This needs to be set up to take in the user value, if possible
-app.use('/texas', state_reps_controller);
+// app.use('/texas', state_reps_controller);
 
 
 // in case of 404 catch by handler

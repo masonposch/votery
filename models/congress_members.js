@@ -1,9 +1,8 @@
 module.exports = function (sequelize, Datatypes){
 	var congress_members = sequelize.define('congress_members', {
 		id: {
-			type: Datatypes.INTEGER,
-			primaryKey: true,
-			autoIncrement: true
+			type: Datatypes.STRING,
+			primaryKey: true
 		},
 		fullName: {
 			type: Datatypes.STRING
