@@ -9,12 +9,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        {{#each reps}}
-                        <h1 class="section-heading">{{this.name}}</h1>
-                        <p class="lead section-lead">{{this.party}}</p>
-                        <p class="section-paragraph">Listing all your representative's voting history.
+                        <h1 class="section-heading">Your State Representatives</h1>
+                        <p class="lead section-lead">Select a Representative to see their voting history. </p>
+                        <p class="section-paragraph">Listing all your state reps.
                         </p>
-                        {{/each}}
                     </div>
                 </div>
             </div>
@@ -33,10 +31,9 @@
                         <table class="table table-hover">
                             <thead>
                               <tr>
-                                <th>Bill</th>
-                                <th>Title</th>
-                                <th>Official Title</th>
-                                <th>Vote</th>
+                                <th>Representative</th>
+                                <th>District</th>
+                                <th>Party</th>
                               </tr>
                             </thead>
                             <!--Where the results will be pushed up-->
@@ -44,16 +41,14 @@
                             {{#each reps}}
                               <tr>
                                 <td>
-                                    hr-5711
+                                    {{this.fullName}}
                                 </td>
                                 <td>
-                                    No U.S. Financing for Iran Act
+                                    {{this.district}}
                                 </td>
                                 <td>
-                                    To prohibit the Secretary of the Treasury from authorizing certain transactions by a U.S. financial institution in connection with the export or re-export of a commercial passenger aircraft to the Islamic Republic of Iran.
-                                </td>
-                                <td>
-                                   {{this.vote}}
+                                    {{this.party}}
+                                </td>  
                                 </td>                                                                 
                               </tr>
                               {{/each}}
