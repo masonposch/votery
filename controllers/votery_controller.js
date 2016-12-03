@@ -50,6 +50,7 @@ router.post('/representative_profile/:id', function (req, res) {
    });
 });
 
+
 // router.post('/representative_profile/:id', function (req, res) {
 //   models.hr5711.findOne({
 //     // include: [{
@@ -77,6 +78,7 @@ router.post('/representative_profile/:id', function (req, res) {
 //     // });
 //   });
 // });
+
 
 
 module.exports = router;
