@@ -9,12 +9,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        {{#each reps}}
-                        <h1 class="section-heading">{{this.name}}</h1>
-                        <p class="lead section-lead">{{this.party}}</p>
+                        {{#if hr5711.vote}}
+                        <h1 class="section-heading">{{hr5711.name}}</h1>
+                        <p class="lead section-lead">{{hr5711.party}}</p>
                         <p class="section-paragraph">Listing the most recent voting history.
                         </p>
-                        {{/each}}
+                        {{/if}}
                     </div>
                 </div>
             </div>
