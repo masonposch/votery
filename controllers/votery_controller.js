@@ -31,7 +31,7 @@ router.post('/state', function (req, res) {
 });
 
 router.post('/representative_profile/:id', function (req, res) {
-  models.congress_members.findAll({
+  models.hr5711.findAll({
     where: {
       id: req.params.id
     }
