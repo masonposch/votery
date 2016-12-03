@@ -61,7 +61,7 @@ router.post('/representative_profile/:id', function (req, res) {
     }
   })
   .then(function(s3110result) {
-    res.render('userChoice/state/', {
+    res.render('userChoice/state', {
     	hr5711: hr5711result[0],
     	hr5982: hr5982result[0],
     	mhr5711: mhr5711result[0],

@@ -41,80 +41,86 @@
                             </thead>
                             <!--Where the results will be pushed up-->
                             <tbody>
-                              <tr>
-                                <td>
-                                    hr-5711
-                                </td>
-                                <td>
-                                    No U.S. Financing for Iran Act
-                                </td>
-                                <td>
-                                    To prohibit the Secretary of the Treasury from authorizing certain transactions by a U.S. financial institution in connection with the export or re-export of a commercial passenger aircraft to the Islamic Republic of Iran.
-                                </td>
-                                <td>
-                                   {{hr5711.vote}}
-                                </td>                                                                 
-                              </tr>
-
-                              <tr>
-                                <td>
-                                    hr-5982
-                                </td>
-                                <td>
-                                    Midnight Rules Relief Act of 2016
-                                </td>
-                                <td>
-                                    To amend chapter 8 of title 5, United States Code, to provide for en bloc consideration in resolutions of disapproval for "midnight rules", and for other purposes.
-                                </td>
-                                <td>
-                                   {{hr5982.vote}}
-                                </td>                                                                 
-                              </tr>
-
-                              <tr>
-                                <td>
-                                    motion-to-hr-5711
-                                </td>
-                                <td>
-                                    No U.S. Financing for Iran Act
-                                </td>
-                                <td>
-                                    Motion to vote on hr-5711
-                                </td>
-                                <td>
-                                   {{mhr5711.vote}}
-                                </td>                                                                 
-                              </tr>
-
-                              <tr>
-                                <td>
-                                    motion-to-hr-5982
-                                </td>
-                                <td>
-                                    Midnight Rules Relief Act of 2016
-                                </td>
-                                <td>
-                                    Motion to vote on hr-5982
-                                </td>
-                                <td>
-                                   {{mhr5982.vote}}
-                                </td>                                                                 
-                              </tr>
-
-                              <tr>
-                                <td>
-                                    s-3110
-                                </td>
-                                <td>
-                                    American Energy and Conservation Act of 2016
-                                </td>
-                                <td>
-                                    A bill to provide for reforms of the administration of the outer Continental Shelf of the United States, to provide for the development of geothermal, solar, and wind energy on public land, and for other purposes.
-                                </td>
-                                <td>
-                                    {{s3110.vote}}
-                                </td>                                                                 
-                              </tr>
+                                {{#if hr5711.vote}}
+                                    <tr>
+                                        <td>
+                                            hr-5711
+                                        </td>
+                                        <td>
+                                            No U.S. Financing for Iran Act
+                                        </td>
+                                        <td>
+                                            To prohibit the Secretary of the Treasury from authorizing certain transactions by a U.S. financial institution in connection with the export or re-export of a commercial passenger aircraft to the Islamic Republic of Iran.
+                                        </td>
+                                        <td>
+                                           {{hr5711.vote}}
+                                        </td>                                                                 
+                                    </tr>
+                                {{/if}}
+                                {{#if hr5982.vote}}
+                                    <tr>
+                                        <td>
+                                            hr-5982
+                                        </td>
+                                        <td>
+                                            Midnight Rules Relief Act of 2016
+                                        </td>
+                                        <td>
+                                            To amend chapter 8 of title 5, United States Code, to provide for en bloc consideration in resolutions of disapproval for "midnight rules", and for other purposes.
+                                        </td>
+                                        <td>
+                                           {{hr5982.vote}}
+                                        </td>                                                                 
+                                    </tr>
+                                {{/if}}
+                                {{#if mhr5711.vote}}
+                                    <tr>
+                                        <td>
+                                            motion-to-hr-5711
+                                        </td>
+                                        <td>
+                                            No U.S. Financing for Iran Act
+                                        </td>
+                                        <td>
+                                            Motion to vote on hr-5711
+                                        </td>
+                                        <td>
+                                           {{mhr5711.vote}}
+                                        </td>                                                                 
+                                    </tr>
+                                {{/if}}
+                                {{#if mhr5982.vote}}
+                                    <tr>
+                                        <td>
+                                            motion-to-hr-5982
+                                        </td>
+                                        <td>
+                                            Midnight Rules Relief Act of 2016
+                                        </td>
+                                        <td>
+                                            Motion to vote on hr-5982
+                                        </td>
+                                        <td>
+                                           {{mhr5982.vote}}
+                                        </td>                                                                 
+                                    </tr>
+                                {{/if}}
+                                {{#if s3110.vote}}
+                                    <tr>
+                                        <td>
+                                            s-3110
+                                        </td>
+                                        <td>
+                                            American Energy and Conservation Act of 2016
+                                        </td>
+                                        <td>
+                                            A bill to provide for reforms of the administration of the outer Continental Shelf of the United States, to provide for the development of geothermal, solar, and wind energy on public land, and for other purposes.
+                                        </td>
+                                        <td>
+                                            {{s3110.vote}}
+                                        </td>                                                                 
+                                    </tr>
+                                {{/if}}
                             </tbody>
                         </table>
                     </div>
