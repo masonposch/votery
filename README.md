@@ -4,7 +4,12 @@ THE PURPOSE OF VOTERY =============================
 Votery was created at a time when it became common practice to question whether the news that was being presented to the world had actually had any merit to it or not. The purpose of Votery is to quickly and accurately inform users who their local political representatives are, and what real action they are taking for their constituents while in office -- all presented in a simple, comprehensible format.
 
 
+VOTERY IS ================================
 
+Eduardo Aceves
+Shannon Green
+Mical Juarez
+Mason Posch
 
 
 CODE SAMPLES =============================
@@ -53,6 +58,12 @@ With the ability to quickly create new table structures based off a source of co
 I.D. based routing methods keep the information in order and ensure that all voting records are consistent with each individual representative.
 
 
+
+
+
+TESTS =============================
+
+Testing for Votery lives within the "Testing" folder
 
 
 
