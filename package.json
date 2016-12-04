@@ -9,7 +9,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "echo",
+    "test": "mocha",
     "start": "node server.js"
   },
   "repository": {
