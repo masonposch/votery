@@ -1,23 +1,28 @@
 {
-  "name": "voter-app",
+  "name": "votery",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "THE PURPOSE OF VOTERY ============================= Votery was created at a time when it became common practice to question whether the news that was being presented to the world had actually had any merit to it or not. The purpose of Votery is to quickly and accurately inform users who their local political representatives are, and what real action they are taking for their constituents while in office -- all presented in a simple, comprehensible format.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server"
+    "test": "echo",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/masonposch/voter-app.git"
+    "url": "git+https://github.com/masonposch/votery.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/masonposch/voter-app/issues"
+    "url": "https://github.com/masonposch/votery/issues"
   },
-  "homepage": "https://github.com/masonposch/voter-app#readme",
-  "dependencies": {
+  "homepage": "https://github.com/masonposch/votery#readme",
+    "dependencies": {
     "body-parser": "^1.15.2",
     "chai": "^3.5.0",
     "csv": "^1.1.0",
