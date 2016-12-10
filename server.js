@@ -3,15 +3,10 @@ var path = require('path');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var models  = require('./models');
-var test = require('./test/csv_package_test.js');
+// var test = require('./test/csv_package_test.js');
 var csv = require('csv');
 var fs = require('fs');
 var voter
-
-
-
-
-
 
 //model controllers
 var application_controller = require('./controllers/application_controller.js'); // set up just in case, not sure how many needed
@@ -20,13 +15,8 @@ var votery_controller = require('./controllers/votery_controller.js');
 // instantiate app
 var app = express();
 
-
 // extract our sequelize connection from the models object, to avoid confusion
 var sequelizeConnection = models.sequelize;
-
-
-
-
 
 // PREPARE OUR TABLES
 // =======================================================================
@@ -253,10 +243,6 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 // })
 
 
-
-
-
-
 // Express settings
 // ================
 
@@ -269,7 +255,6 @@ app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -292,12 +277,11 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-
 var port = process.env.PORT || 3000;
 
 // listen on port 3000
 app.listen(port, function(){
-	console.log("Listening on port 3000")
+	console.log("Listening on port %s", port);
 })
 
 // export as app
