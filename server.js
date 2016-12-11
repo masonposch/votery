@@ -3,10 +3,8 @@ var path = require('path');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var models  = require('./models');
-// var test = require('./test/csv_package_test.js');
 var csv = require('csv');
 var fs = require('fs');
-var voter
 
 //model controllers
 var application_controller = require('./controllers/application_controller.js'); // set up just in case, not sure how many needed
@@ -14,234 +12,6 @@ var votery_controller = require('./controllers/votery_controller.js');
 
 // instantiate app
 var app = express();
-
-// extract our sequelize connection from the models object, to avoid confusion
-var sequelizeConnection = models.sequelize;
-
-// PREPARE OUR TABLES
-// =======================================================================
-
-
-// We run this query so that we can drop our tables even though they have foreign keys
-sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
-
-
-// .then(function(){
-// 	return sequelizeConnection.sync({force:true})
-// })
-
-// .then(function(){
-
-
-// 	fs.readFile('./assets/csv/hr-5711.csv', function(err, res) {
-
-// 	  if (err) throw err;
-
-// 	  csv.parse(res, function(err, res) {
-
-// 	    if (err) throw err;
-
-// 	    for(var i = 0; i < res.length; i++){
-
-// 	    	models.hr5711.create({
-
-// 	    		id: res[i][0],
-// 	    		state: res[i][1],
-// 	    		district: res[i][2],
-// 	    		vote: res[i][3],
-// 	    		name: res[i][4],
-// 	    		party: res[i][5]
-
-// 	    	})
-
-// 	    }
-
-// 	  })
-
-// 	});
-
-// 	fs.readFile('./assets/csv/hr-5982.csv', function(err, res) {
-
-// 	  if (err) throw err;
-
-// 	  csv.parse(res, function(err, res) {
-
-// 	    if (err) throw err;
-
-// 	    for(var i = 0; i < res.length; i++){
-
-// 	    	models.hr5982.create({
-
-// 	    		id: res[i][0],
-// 	    		state: res[i][1],
-// 	    		district: res[i][2],
-// 	    		vote: res[i][3],
-// 	    		name: res[i][4],
-// 	    		party: res[i][5]
-
-// 	    	})
-
-// 	    }
-
-// 	  })
-
-// 	});
-
-// 	fs.readFile('./assets/csv/motion-to-hr-5711.csv', function(err, res) {
-
-// 	  if (err) throw err;
-
-// 	  csv.parse(res, function(err, res) {
-
-// 	    if (err) throw err;
-
-// 	    for(var i = 0; i < res.length; i++){
-
-// 	    	models.mhr5711.create({
-
-// 	    		id: res[i][0],
-// 	    		state: res[i][1],
-// 	    		district: res[i][2],
-// 	    		vote: res[i][3],
-// 	    		name: res[i][4],
-// 	    		party: res[i][5]
-
-// 	    	})
-
-// 	    }
-
-// 	  })
-
-// 	});
-
-// 	fs.readFile('./assets/csv/motion-to-hr-5982.csv', function(err, res) {
-
-// 	  if (err) throw err;
-
-// 	  csv.parse(res, function(err, res) {
-
-// 	    if (err) throw err;
-
-// 	    for(var i = 0; i < res.length; i++){
-
-// 	    	models.mhr5982.create({
-
-// 	    		id: res[i][0],
-// 	    		state: res[i][1],
-// 	    		district: res[i][2],
-// 	    		vote: res[i][3],
-// 	    		name: res[i][4],
-// 	    		party: res[i][5]
-
-// 	    	})
-
-// 	    }
-
-// 	  })
-
-// 	});
-
-// 	fs.readFile('./assets/csv/s-3110.csv', function(err, res) {
-
-// 	  if (err) throw err;
-
-// 	  csv.parse(res, function(err, res) {
-
-// 	    if (err) throw err;
-
-// 	    for(var i = 0; i < res.length; i++){
-
-// 	    	models.s3110.create({
-
-// 	    		id: res[i][0],
-// 	    		state: res[i][1],
-// 	    		district: res[i][2],
-// 	    		vote: res[i][3],
-// 	    		name: res[i][4],
-// 	    		party: res[i][5]
-
-// 	    	})
-
-// 	    }
-
-// 	  })
-
-// 	});
-
-// fs.readFile('./assets/json/legislators-current.json', function(err, res) {
-
-//  	  if (err) throw err;
-
-//     var data = JSON.parse(res);
-
-//  	  for (i = 0; i < 541; i++){
-
-//  	    models.congress_members.create({
-
-//  	    	id: data[i].id.govtrack,
-//  	    	fullName: data[i].name.official_full,
-//  	    	party: data[i].terms[data[i].terms.length - 1].party,
-//  	    	state: data[i].terms[data[i].terms.length - 1].state,
-//  	  		chamber: data[i].terms[data[i].terms.length - 1].type,
-//  	  		officeAddress: data[i].terms[data[i].terms.length - 1].office,
-//         	phoneNumber: data[i].terms[data[i].terms.length - 1].phone,
-//         	url: data[i].terms[data[i].terms.length - 1].url
-
-//  	    })
-
-//  	  }
-
-//  });
-
-// })
-
-
-
-
-
-// //Push the parsed data into its respective table in the database
-// // =======================================================================
-
-// .then(function(){
-
-
-// 	models.hr5711.findAll({
-
-// 	}).then(function(records){
-// 		// console.log(records);
-// 	})
-
-
-// 	models.hr5982.findAll({
-
-// 	}).then(function(records){
-// 		// console.log(records);
-// 	})
-
-
-// 	models.mhr5711.findAll({
-
-// 	}).then(function(records){
-// 		// console.log(records);
-// 	})
-
-
-// 	models.mhr5982.findAll({
-
-// 	}).then(function(records){
-// 		// console.log(records);
-// 	})
-
-
-// 	models.s3110.findAll({
-
-// 	}).then(function(records){
-// 		// console.log(records);
-// 	})
-
-
-// })
-
 
 // Express settings
 // ================
@@ -270,13 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', application_controller);
 app.use('/votery', votery_controller);
 
-// in case of 404 catch by handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
 var port = process.env.PORT || 3000;
 
 // listen on port 3000
@@ -284,5 +47,5 @@ app.listen(port, function(){
 	console.log("Listening on port %s", port);
 })
 
-// export as app
+// our module get's exported as app.
 module.exports = app;

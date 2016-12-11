@@ -23,7 +23,9 @@
     "tables": "0.0.4",
     "yamljs": "^0.2.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "supertest": "^2.0.1"
+  },
   "scripts": {
     "test": "mocha",
     "start": "node server.js"
